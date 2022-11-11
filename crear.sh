@@ -1,1 +1,1 @@
-psql -h localhost -d tienda -U tienda < tienda.sql
+psql -h localhost -d tienda -U tienda < src/tienda.sql

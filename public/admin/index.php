@@ -8,6 +8,35 @@
     <title>Administración</title>
 </head>
 <body>
-    <h1>Hola</h1>
+    <?php
+    require '../../src/admin-auxiliar.php';
+    require '../../src/auxiliar.php';
+    
+    $pdo = conectar();
+    $sent = $pdo->query('SELECT * FROM articulos');
+    ?>
+
+    <div>
+        <table>
+            <thead>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Precios</th>
+            <th colspan="2">Acciones</th>
+            </thead>
+            <tbody>
+                <?php foreach($sent as $fila): ?>
+                <tr>
+                    <td> <?= hh($fila['codigo']) ?></td>
+                    <td> <?= hh($fila['descripcion']) ?></td>
+                    <td> <?= hh($fila['precio']) ?></td>
+                    <td> <a href="#">Editar</a></td>
+                    <td> <a href="#">Borrar</a></td>
+
+                </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
