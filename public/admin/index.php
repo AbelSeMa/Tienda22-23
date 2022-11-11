@@ -38,5 +38,6 @@
             </tbody>
         </table>
     </div>
+    <script src="/js/flowbite.js"></script>
 </body>
 </html>
